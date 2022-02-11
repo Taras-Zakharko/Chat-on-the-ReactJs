@@ -1,0 +1,22 @@
+.App {
+  width: 90%;
+  margin: 0 auto;
+  border: 2px solid #000;
+  main {
+    display: flex;
+    width: 100%;
+
+    background-color: #eee;
+    .chats {
+      width: 30%;
+    }
+    .message-block {
+      width: 70%;
+    }
+  }
+  footer {
+    height: 20px;
+    background-color: #eee;
+    border-top: 2px solid #dedede;
+  }
+}

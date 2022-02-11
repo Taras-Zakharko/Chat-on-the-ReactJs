@@ -1,0 +1,134 @@
+{
+  "AllUsers": [
+    {
+      "name": "Petro",
+      "photo": "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+      "message": [
+        {
+          "author": "Petro",
+          "messageText": "Hi my neme is Petro",
+          "date": "10/1/2022 20:40:37"
+        },
+        {
+          "author": "Me",
+          "messageText": "Hi my neme is Petro",
+          "date": "10/1/2022 20:51:37"
+        },
+        {
+          "author": "Petro",
+          "messageText": "Hi my neme is Petro",
+          "date": "10/1/2022 21:51:37"
+        },
+        {
+          "author": "Petro",
+          "messageText": "Hi my neme is Petro",
+          "date": "10/1/2022 22:51:37"
+        }
+      ]
+    },
+    {
+      "name": "Andriy",
+      "photo": "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+      "message": [
+        {
+          "author": "Andriy",
+          "messageText": "Hi my neme is Andriy",
+          "date": "10/2/2022 20:50:37"
+        },
+        {
+          "author": "Me",
+          "messageText": "Hi my neme is Andriy",
+          "date": "10/2/2022 20:51:37"
+        },
+        {
+          "author": "Me",
+          "messageText": "Hi my neme is Andriy",
+          "date": "10/2/2022 21:51:37"
+        },
+        {
+          "author": "Andriy",
+          "messageText": "Hi my neme is Andriy",
+          "date": "10/2/2022 22:51:37"
+        }
+      ]
+    },
+    {
+      "name": "Taras",
+      "photo": "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+      "message": [
+        {
+          "author": "Taras",
+          "messageText": "Hi my neme is Taras",
+          "date": "7/1/2022 21:51:37"
+        },
+        {
+          "author": "Taras",
+          "messageText": "Hi my neme is Taras",
+          "date": "7/1/2022 22:51:37"
+        },
+        {
+          "author": "Me",
+          "messageText": "Hi my neme is Taras",
+          "date": "8/1/2022 22:51:37"
+        },
+        {
+          "author": "Taras",
+          "messageText": "Hi my neme is Taras",
+          "date": "9/1/2022 22:51:37"
+        },
+        {
+          "author": "Me",
+          "messageText": "Hi my neme is Taras",
+          "date": "10/1/2022 22:51:37"
+        }
+      ]
+    },
+    {
+      "name": "Ivan",
+      "photo": "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+      "message": [
+        {
+          "author": "Ivan",
+          "messageText": "Hi my neme is Ivan",
+          "date": "10/4/2021 21:51:37"
+        },
+        {
+          "author": "Me",
+          "messageText": "Hi my neme is Ivan",
+          "date": "10/4/2021 22:51:37"
+        },
+        {
+          "author": "Ivan",
+          "messageText": "Hi my neme is Ivan",
+          "date": "3/5/2021 22:51:37"
+        }
+      ]
+    },
+    {
+      "name": "Oleh",
+      "photo": "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+      "message": [
+        {
+          "author": "Me",
+          "messageText": "Hi my neme is Oleh",
+          "date": "11/2/2020 22:51:37"
+        },
+        {
+          "author": "Oleh",
+          "messageText": "Hi my neme is Oleh",
+          "date": "13/2/2020 22:51:37"
+        },
+        {
+          "author": "Me",
+          "messageText": "Hi my neme is Oleh",
+          "date": "14/2/2020 22:51:37"
+        },
+        {
+          "author": "Oleh",
+          "messageText": "Hi my neme is Oleh",
+          "date": "13/3/2020 22:51:37"
+        }
+      ]
+    }
+  ]
+}

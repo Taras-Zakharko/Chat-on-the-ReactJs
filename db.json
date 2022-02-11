@@ -1,0 +1,99 @@
+{
+  "AllUsers": [
+    {
+      "id": "1",
+      "name": "Petro",
+      "photo": "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+      "message": [
+        {
+          "author": "Me",
+          "messageText": "asd asd a",
+          "date": "11.02.2022",
+          "time": "22:35:32"
+        },
+        {
+          "author": "Petro",
+          "messageText": "If you sneeze on Chuck Norris, He'll sneeze at you back. Which will blow you away.",
+          "date": "11.02.2022",
+          "time": "22:35:32"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Andriy",
+      "photo": "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+      "message": [
+        {
+          "author": "Me",
+          "messageText": "asd asd a",
+          "date": "11.02.2022",
+          "time": "22:35:32"
+        },
+        {
+          "author": "Andriy",
+          "messageText": "If you sneeze on Chuck Norris, He'll sneeze at you back. Which will blow you away.",
+          "date": "11.02.2022",
+          "time": "22:35:32"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Taras",
+      "photo": "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+      "message": [
+        {
+          "author": "Me",
+          "messageText": "asd asd a",
+          "date": "11.02.2022",
+          "time": "22:35:32"
+        },
+        {
+          "author": "Taras",
+          "messageText": "If you sneeze on Chuck Norris, He'll sneeze at you back. Which will blow you away.",
+          "date": "11.02.2022",
+          "time": "22:35:32"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Ivan",
+      "photo": "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+      "message": [
+        {
+          "author": "Me",
+          "messageText": "asd asd a",
+          "date": "11.02.2022",
+          "time": "22:35:32"
+        },
+        {
+          "author": "Ivan",
+          "messageText": "If you sneeze on Chuck Norris, He'll sneeze at you back. Which will blow you away.",
+          "date": "11.02.2022",
+          "time": "22:35:32"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Oleh",
+      "photo": "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+      "message": [
+        {
+          "author": "Me",
+          "messageText": "asd asd a",
+          "date": "11.02.2022",
+          "time": "22:35:32"
+        },
+        {
+          "author": "Oleh",
+          "messageText": "If you sneeze on Chuck Norris, He'll sneeze at you back. Which will blow you away.",
+          "date": "11.02.2022",
+          "time": "22:35:32"
+        }
+      ]
+    }
+  ]
+}
