@@ -3,7 +3,7 @@ import "./Chats.scss";
 import Contact from "./Contact";
 
 export default function AllChats(props) {
-  
+  console.log('all');
   return (
     <div className="all-chats">
       <h2>Chats</h2>
@@ -14,6 +14,7 @@ export default function AllChats(props) {
         filter={props.filter}
         setFilter={props.setFilter}
         searcChat={props.searcChat}
+        setUsers={props.setUsers}
       />
     </div>
   );

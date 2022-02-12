@@ -1,12 +1,13 @@
-import React, { useState,useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import SendMessageForm from "../SendMessageForm/SendMessageForm";
 import "./MessageList.scss";
 
 export default function MessageList(props) {
+  const [user,setUser]= useState(props.users[props.contId]);
+  const [inpText, setInpText] = useState("");
 
   const [userMessanges, setUserMessanges] = useState(props.users[0])
-  useMemo(()=> {for (const user of props.users) {
-    console.log(+user.id , +props.contId);
+  useEffect(()=> {for (const user of props.users) {
     if(+user.id === +props.contId){
       setUserMessanges((prev) => prev = user)
     }
@@ -49,7 +50,10 @@ export default function MessageList(props) {
         contId={props.contId}
         setRandomMessage={props.setRandomMessage}
         randomMessage={props.randomMessage}
-        
+        user={user}
+        setUser={setUser}
+        inpText={inpText}
+        setInpText={setInpText}
       />
     </div>
   );

@@ -8,9 +8,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [contId, setContId] = useState(0);
 
-  const [randomMessage, setRandomMessage] = useState("Do you want a joke");
+  const [randomMessage, setRandomMessage] = useState("");
   
-
   useEffect(() => {
     fetch("http://localhost:3000/AllUsers")
       .then((res) => res.json())
@@ -31,8 +30,6 @@ function App() {
       });
   }, []);
 
-  
-
   return (
     <div className="App">
       <main>
@@ -41,6 +38,7 @@ function App() {
             users={users}
             contId={contId}
             setContId={setContId}
+            setUsers={setUsers}
           />
         </div>
         <div className="message-block">

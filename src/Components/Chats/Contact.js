@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from "react";
+import React, {  useEffect, useMemo, useState } from "react";
 
 import "./Chats.scss";
 
@@ -6,7 +6,7 @@ export default function Contact(props) {
 
   const [filter, setFilter] = useState(props.users);
   useEffect(() => {
-    setFilter((prev) => (prev = props.users));
+    setFilter((prev) => prev = props.users);
 
     if (props.searcChat !== "") {
       props.users.filter((user) => {
@@ -15,7 +15,7 @@ export default function Contact(props) {
       });
     }
     
-  }, [props, setFilter]);
+  }, [props, setFilter,filter]);
 
   function _filter(arr, value) {
     console.log(arr);
@@ -27,11 +27,14 @@ export default function Contact(props) {
     }
     
   }
-  filter.sort((a, b) => {
-    let c = new Date(+a.message[a.message.length - 1].date);
-    let d = new Date(+b.message[b.message.length - 1].date);
-    return d - c;
-  });
+  useMemo(()=>{
+    filter.sort((a, b) => {
+      let c = new Date(+a.message[a.message.length - 1].date);
+      let d = new Date(+b.message[b.message.length - 1].date);
+      return d - c;
+    });
+  },[filter])
+  
 
   console.log(filter);
   return (

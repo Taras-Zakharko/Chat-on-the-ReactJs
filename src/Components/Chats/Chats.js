@@ -4,17 +4,22 @@ import SearchChat from "./SearchChat";
 import AllChats from "./AllChats";
 
 export default function Chats(props) {
-  console.log(props.users)
-  const [searcChat, setSearchChat] = useState('');
+  const [searcChat, setSearchChat] = useState("");
+  console.log('hi');
 
   return (
     <>
-      <SearchChat users={props.users} setSearchChat={setSearchChat} searcChat={searcChat} />
+      <SearchChat
+        users={props.users}
+        setSearchChat={setSearchChat}
+        searcChat={searcChat}
+      />
       <AllChats
         users={props.users}
         contId={props.contId}
         setContId={props.setContId}
         searcChat={searcChat}
+        setUsers={props.setUsers}
       />
     </>
   );

@@ -1,68 +1,56 @@
-import React, { useCallback, useState,useMemo } from "react";
+import React, { useCallback, useEffect } from "react";
 
 import "./SendMessageForm.scss";
 
 export default function SendMessageForm(props) {
-  const [user,setUser]= useState(props.users[props.contId]);
 
-  useMemo(()=> {
+  useEffect(()=> {
     for (const user of props.users) {
-      console.log(+user.id , +props.contId);
       if(+user.id === +props.contId){
-        setUser((prev) => prev = user)
+        props.setUser((prev) => prev = user)
       }
-      
     }
   },[props])
-
-  let f = new Date().getTime();
-  console.log(new Date(f).toLocaleString());
-
-  const [inpText, setInpText] = useState("");
   
   const sendMessage = useCallback(() => {
-    // let user = props.users[props.contId];
-    console.log(user);
     
-    
-    
-
     let date = new Date().getTime();
-    
-    
 
-    if (inpText !== "") {
-      user.message.push({
+    if (props.inpText !== "") {
+      props.user.message.push({
         author: "Me",
-        messageText: `${inpText}`,
+        messageText: `${props.inpText}`,
         date: `${date}`
-        
       });
 
       fetch(`http://localhost:3000/AllUsers/${props.contId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(user),
+        body: JSON.stringify(props.user),
       });
     }
 
-    setInpText("");
+    props.setInpText("");
 
     setTimeout(() => {
-      user.message.push({
-        author: `${user.name}`,
+      fetch("https://api.chucknorris.io/jokes/random")
+      .then((res) => res.json())
+      .then((result) => {
+        props.setRandomMessage(result.value);
+      });
+      props.user.message.push({
+        author: `${props.user.name}`,
         messageText: `${props.randomMessage}`,
         date: `${date}`
-        
       });
 
       fetch(`http://localhost:3000/AllUsers/${props.contId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(user),
+        body: JSON.stringify(props.user),
       });
     }, 10000);
-  }, [props, inpText, user]);
+  }, [props]);
 
   return (
     <div className="message-form">
@@ -70,14 +58,14 @@ export default function SendMessageForm(props) {
         type="text"
         className="inp-message"
         placeholder="Type your message"
-        value={inpText}
+        value={props.inpText}
         onKeyPress={(e) => {
           if (e.key === "Enter") {
             sendMessage();
           }
         }}
         onChange={() =>
-          setInpText(
+          props.setInpText(
             (prev) => (prev = document.querySelector(".inp-message").value)
           )
         }
