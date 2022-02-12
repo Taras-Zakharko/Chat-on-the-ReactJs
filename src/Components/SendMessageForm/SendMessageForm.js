@@ -19,7 +19,7 @@ export default function SendMessageForm(props) {
   console.log(new Date(f).toLocaleString());
 
   const [inpText, setInpText] = useState("");
-  console.log(props.users);
+  
   const sendMessage = useCallback(() => {
     // let user = props.users[props.contId];
     console.log(user);

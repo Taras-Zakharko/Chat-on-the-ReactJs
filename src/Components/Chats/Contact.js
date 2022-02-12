@@ -1,20 +1,42 @@
-import React from "react";
+import React, {  useEffect, useState } from "react";
 
 import "./Chats.scss";
 
 export default function Contact(props) {
-  
-  const sorted = props.users.sort((a,b)=>{
+
+  const [filter, setFilter] = useState(props.users);
+  useEffect(() => {
+    setFilter((prev) => (prev = props.users));
+
+    if (props.searcChat !== "") {
+      props.users.filter((user) => {
+        console.log(_filter(filter, props.searcChat));
+        return setFilter((prev) => prev = _filter(filter, props.searcChat));
+      });
+    }
+    
+  }, [props, setFilter]);
+
+  function _filter(arr, value) {
+    console.log(arr);
+    if(arr.length > 0){
+      return arr.filter((el) => {
+        console.log(el);
+        return el.name.toLowerCase().indexOf(value.toLowerCase()) !== -1;
+      });
+    }
+    
+  }
+  filter.sort((a, b) => {
     let c = new Date(+a.message[a.message.length - 1].date);
     let d = new Date(+b.message[b.message.length - 1].date);
-    return d-c;
-  })
-  
-  console.log(sorted, props.users);
+    return d - c;
+  });
 
+  console.log(filter);
   return (
     <>
-      {props.users.map((user, index) => {
+      {filter.map((user) => {
         return (
           <div
             className="contact"
@@ -22,7 +44,7 @@ export default function Contact(props) {
             id={user.id}
             onClick={() => {
               props.setContId((prev) => (prev = user.id));
-              console.log(user.id-1);
+              console.log(user.id - 1);
             }}
           >
             <div className="user-chat-info">
@@ -33,7 +55,11 @@ export default function Contact(props) {
               </div>
             </div>
 
-            <p className="date">{new Date(+user.message[user.message.length - 1].date).toLocaleDateString()}</p>
+            <p className="date">
+              {new Date(
+                +user.message[user.message.length - 1].date
+              ).toLocaleDateString()}
+            </p>
           </div>
         );
       })}

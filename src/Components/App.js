@@ -6,6 +6,10 @@ import { useState, useEffect } from "react";
 function App() {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [contId, setContId] = useState(0);
+
+  const [randomMessage, setRandomMessage] = useState("Do you want a joke");
+  
 
   useEffect(() => {
     fetch("http://localhost:3000/AllUsers")
@@ -18,26 +22,26 @@ function App() {
         console.log(err.message);
       });
   }, [setUsers]);
-  
-  const [contId, setContId] = useState(0);
-
-  const [randomMessage, setRandomMessage] = useState("Do you want a joke");
 
   useEffect(() => {
     fetch("https://api.chucknorris.io/jokes/random")
-    .then(res => res.json())
-    .then(
-      (result) => {
+      .then((res) => res.json())
+      .then((result) => {
         setRandomMessage(result.value);
-      }
-    )
+      });
   }, []);
+
+  
 
   return (
     <div className="App">
       <main>
         <div className="chats">
-          <Chats users={users} contId={contId} setContId={setContId} />
+          <Chats
+            users={users}
+            contId={contId}
+            setContId={setContId}
+          />
         </div>
         <div className="message-block">
           {isLoading && <div>Loading...</div>}

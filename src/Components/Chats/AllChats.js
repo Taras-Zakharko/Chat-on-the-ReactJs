@@ -11,6 +11,9 @@ export default function AllChats(props) {
         users={props.users}
         contId={props.contId}
         setContId={props.setContId}
+        filter={props.filter}
+        setFilter={props.setFilter}
+        searcChat={props.searcChat}
       />
     </div>
   );

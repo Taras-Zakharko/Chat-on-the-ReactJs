@@ -4,9 +4,8 @@ import SearchChat from "./SearchChat";
 import AllChats from "./AllChats";
 
 export default function Chats(props) {
+  console.log(props.users)
   const [searcChat, setSearchChat] = useState('');
-  
-  console.log(searcChat);
 
   return (
     <>
@@ -15,6 +14,7 @@ export default function Chats(props) {
         users={props.users}
         contId={props.contId}
         setContId={props.setContId}
+        searcChat={searcChat}
       />
     </>
   );
