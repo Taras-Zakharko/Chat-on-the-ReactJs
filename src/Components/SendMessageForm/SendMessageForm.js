@@ -3,24 +3,20 @@ import React, { useCallback, useEffect } from "react";
 import "./SendMessageForm.scss";
 
 export default function SendMessageForm(props) {
-
-  useEffect(()=> {
+  useEffect(() => {
     for (const user of props.users) {
-      if(+user.id === +props.contId){
-        props.setUser((prev) => prev = user)
+      if (+user.id === +props.contId) {
+        props.setUser((prev) => (prev = user));
       }
     }
-  },[props])
-  
-  const sendMessage = useCallback(() => {
-    
-    let date = new Date().getTime();
+  }, [props]);
 
+  const sendMessage = useCallback(() => {
     if (props.inpText !== "") {
       props.user.message.push({
         author: "Me",
         messageText: `${props.inpText}`,
-        date: `${date}`
+        date: `${new Date().getTime()}`,
       });
 
       fetch(`http://localhost:3000/AllUsers/${props.contId}`, {
@@ -31,17 +27,19 @@ export default function SendMessageForm(props) {
     }
 
     props.setInpText("");
+  }, [props]);
 
+  const addRandomMessage = useCallback(() => {
     setTimeout(() => {
       fetch("https://api.chucknorris.io/jokes/random")
-      .then((res) => res.json())
-      .then((result) => {
-        props.setRandomMessage(result.value);
-      });
+        .then((res) => res.json())
+        .then((result) => {
+          props.setRandomMessage(result.value);
+        });
       props.user.message.push({
         author: `${props.user.name}`,
         messageText: `${props.randomMessage}`,
-        date: `${date}`
+        date: `${new Date().getTime()}`,
       });
 
       fetch(`http://localhost:3000/AllUsers/${props.contId}`, {
@@ -62,6 +60,8 @@ export default function SendMessageForm(props) {
         onKeyPress={(e) => {
           if (e.key === "Enter") {
             sendMessage();
+            addRandomMessage();
+            props.forceUpdate();
           }
         }}
         onChange={() =>
@@ -73,6 +73,8 @@ export default function SendMessageForm(props) {
       <button
         onClick={() => {
           sendMessage();
+          addRandomMessage();
+          props.forceUpdate();
         }}
       >
         <img

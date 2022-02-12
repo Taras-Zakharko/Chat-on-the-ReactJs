@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   padding: 15px;
-  border-right: 1px solid #dedede;;
+  border-right: 1px solid #dedede;
 
   img {
     width: 40px;
@@ -11,7 +11,7 @@
   }
   .label-input-search {
     position: relative;
-    svg{
+    svg {
       width: 18px;
       position: absolute;
       top: 10px;
@@ -30,8 +30,6 @@
 .all-chats {
   background-color: #fff;
   border-right: 1px solid #dedede;
-  height: 400px;
-  overflow-y: scroll;
 
   h2 {
     font-size: 30px;
@@ -39,18 +37,22 @@
     color: rgb(0, 187, 187);
     padding: 15px;
   }
-  .contact {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-    cursor: pointer;
-    .user-chat-info {
+  .contacts-box {
+    height: 400px;
+    overflow-y: scroll;
+    .contact {
       display: flex;
-      img {
-        width: 40px;
-        height: 40px;
-        margin-right: 20px;
+      justify-content: space-between;
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+      .user-chat-info {
+        display: flex;
+        img {
+          width: 40px;
+          height: 40px;
+          margin-right: 20px;
+        }
       }
     }
   }

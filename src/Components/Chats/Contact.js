@@ -1,53 +1,51 @@
-import React, {  useEffect, useMemo, useState } from "react";
+import React, { useEffect } from "react";
+import useForceUpdate from "use-force-update";
 
 import "./Chats.scss";
 
 export default function Contact(props) {
+  const forceUpdate = useForceUpdate();
 
-  const [filter, setFilter] = useState(props.users);
   useEffect(() => {
-    setFilter((prev) => prev = props.users);
+    props.setFilter((prev) => {
+      return (prev = props.users);
+    });
 
     if (props.searcChat !== "") {
-      props.users.filter((user) => {
-        console.log(_filter(filter, props.searcChat));
-        return setFilter((prev) => prev = _filter(filter, props.searcChat));
+      props.filter.filter((user) => {
+        return props.setFilter(
+          (prev) => (prev = _filter(props.filter, props.searcChat))
+        );
       });
     }
-    
-  }, [props, setFilter,filter]);
+  }, [props.searcChat, props.setFilter]);
 
   function _filter(arr, value) {
-    console.log(arr);
-    if(arr.length > 0){
+    if (arr.length > 0) {
       return arr.filter((el) => {
-        console.log(el);
         return el.name.toLowerCase().indexOf(value.toLowerCase()) !== -1;
       });
     }
-    
   }
-  useMemo(()=>{
-    filter.sort((a, b) => {
+  useEffect(() => {
+    props.filter.sort((a, b) => {
       let c = new Date(+a.message[a.message.length - 1].date);
       let d = new Date(+b.message[b.message.length - 1].date);
       return d - c;
     });
-  },[filter])
-  
+    forceUpdate();
+  }, [props, forceUpdate]);
 
-  console.log(filter);
   return (
-    <>
-      {filter.map((user) => {
+    <div className="contacts-box">
+      {props.filter.map((user) => {
         return (
           <div
             className="contact"
             key={user.id}
             id={user.id}
             onClick={() => {
-              props.setContId((prev) => (prev = user.id));
-              console.log(user.id - 1);
+              return props.setContId((prev) => (prev = user.id));
             }}
           >
             <div className="user-chat-info">
@@ -66,6 +64,6 @@ export default function Contact(props) {
           </div>
         );
       })}
-    </>
+    </div>
   );
 }

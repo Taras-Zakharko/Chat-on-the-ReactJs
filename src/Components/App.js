@@ -2,20 +2,25 @@ import "./App.scss";
 import Chats from "./Chats/Chats";
 import MessageList from "./MessageList/MessageList";
 import { useState, useEffect } from "react";
+import useForceUpdate from "use-force-update";
 
 function App() {
+  const forceUpdate = useForceUpdate();
+
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [contId, setContId] = useState(0);
+  const [contId, setContId] = useState(1);
+  const [filter, setFilter] = useState([]);
 
   const [randomMessage, setRandomMessage] = useState("");
-  
+
   useEffect(() => {
     fetch("http://localhost:3000/AllUsers")
       .then((res) => res.json())
       .then((result) => {
         setIsLoading(false);
         setUsers(result);
+        setFilter(result);
       })
       .catch((err) => {
         console.log(err.message);
@@ -39,6 +44,8 @@ function App() {
             contId={contId}
             setContId={setContId}
             setUsers={setUsers}
+            filter={filter}
+            setFilter={setFilter}
           />
         </div>
         <div className="message-block">
@@ -50,6 +57,9 @@ function App() {
               contId={contId}
               randomMessage={randomMessage}
               setRandomMessage={setRandomMessage}
+              filter={filter}
+              setFilter={setFilter}
+              forceUpdate={forceUpdate}
             />
           ) : null}
         </div>

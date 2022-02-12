@@ -3,18 +3,17 @@ import SendMessageForm from "../SendMessageForm/SendMessageForm";
 import "./MessageList.scss";
 
 export default function MessageList(props) {
-  const [user,setUser]= useState(props.users[props.contId]);
+  const [user, setUser] = useState(props.users[props.contId]);
   const [inpText, setInpText] = useState("");
 
-  const [userMessanges, setUserMessanges] = useState(props.users[0])
-  useEffect(()=> {for (const user of props.users) {
-    if(+user.id === +props.contId){
-      setUserMessanges((prev) => prev = user)
+  const [userMessanges, setUserMessanges] = useState(props.users[0]);
+  useEffect(() => {
+    for (const user of props.users) {
+      if (+user.id === +props.contId) {
+        setUserMessanges((prev) => (prev = user));
+      }
     }
-    
-  }}, [props])
-  console.log(userMessanges);
-
+  }, [props, setUserMessanges]);
 
   return (
     <div className="message-list-block">
@@ -31,14 +30,18 @@ export default function MessageList(props) {
                   <img src={userMessanges.photo} alt="" />
                   <p>{text.messageText}</p>
                 </div>
-                <p className="my-message-date">{`${new Date(+text.date).toLocaleString()}`}</p>
+                <p className="my-message-date">{`${new Date(
+                  +text.date
+                ).toLocaleString()}`}</p>
               </div>
             );
           } else {
             return (
               <div className="my-message" key={index}>
                 <p className="my-message-text">{text.messageText}</p>
-                <p className="my-message-date">{`${new Date(+text.date).toLocaleString()}`}</p>
+                <p className="my-message-date">{`${new Date(
+                  +text.date
+                ).toLocaleString()}`}</p>
               </div>
             );
           }
@@ -54,6 +57,7 @@ export default function MessageList(props) {
         setUser={setUser}
         inpText={inpText}
         setInpText={setInpText}
+        forceUpdate={props.forceUpdate}
       />
     </div>
   );
