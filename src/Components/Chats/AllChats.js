@@ -3,6 +3,7 @@ import "./Chats.scss";
 import Contact from "./Contact";
 
 export default function AllChats(props) {
+  
   return (
     <div className="all-chats">
       <h2>Chats</h2>

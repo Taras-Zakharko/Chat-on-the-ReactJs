@@ -2,39 +2,65 @@
   "AllUsers": [
     {
       "id": "1",
-      "name": "Petro",
-      "photo": "https://cdn-icons-png.flaticon.com/512/149/149071.png",
-      "message": [
-        {
-          "author": "Me",
-          "messageText": "asd asd a",
-          "date": "11.02.2022",
-          "time": "22:35:32"
-        },
-        {
-          "author": "Petro",
-          "messageText": "If you sneeze on Chuck Norris, He'll sneeze at you back. Which will blow you away.",
-          "date": "11.02.2022",
-          "time": "22:35:32"
-        }
-      ]
-    },
-    {
-      "id": "2",
       "name": "Andriy",
       "photo": "https://cdn-icons-png.flaticon.com/512/149/149071.png",
       "message": [
         {
           "author": "Me",
           "messageText": "asd asd a",
-          "date": "11.02.2022",
-          "time": "22:35:32"
+          "date": "1644313432869"
         },
         {
           "author": "Andriy",
           "messageText": "If you sneeze on Chuck Norris, He'll sneeze at you back. Which will blow you away.",
-          "date": "11.02.2022",
-          "time": "22:35:32"
+          "date": "1644323432869"
+        },
+        {
+          "author": "Me",
+          "messageText": "g dfgs dfg df",
+          "date": "1644626088816"
+        },
+        {
+          "author": "Me",
+          "messageText": "Hi Andriy",
+          "date": "1644627406602"
+        },
+        {
+          "author": "Andriy",
+          "messageText": "If Barney and Bob the Builder had a swimming contest, you know who would win? Chuck Norris.",
+          "date": "1644627406602"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Petro",
+      "photo": "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+      "message": [
+        {
+          "author": "Me",
+          "messageText": "asd asd a",
+          "date": "1644313432869"
+        },
+        {
+          "author": "Petro",
+          "messageText": "If you sneeze on Chuck Norris, He'll sneeze at you back. Which will blow you away.",
+          "date": "1644323432869"
+        },
+        {
+          "author": "Me",
+          "messageText": "g dfgs dfg df",
+          "date": "1644626088816"
+        },
+        {
+          "author": "Me",
+          "messageText": " sdfsdf sd",
+          "date": "1644627219737"
+        },
+        {
+          "author": "Petro",
+          "messageText": "If Barney and Bob the Builder had a swimming contest, you know who would win? Chuck Norris.",
+          "date": "1644627219737"
         }
       ]
     },
@@ -46,14 +72,32 @@
         {
           "author": "Me",
           "messageText": "asd asd a",
-          "date": "11.02.2022",
-          "time": "22:35:32"
+          "date": "1644313432869"
         },
         {
           "author": "Taras",
           "messageText": "If you sneeze on Chuck Norris, He'll sneeze at you back. Which will blow you away.",
-          "date": "11.02.2022",
-          "time": "22:35:32"
+          "date": "1644323432869"
+        },
+        {
+          "author": "Me",
+          "messageText": "g dfgs dfg df",
+          "date": "1644626088816"
+        },
+        {
+          "author": "Taras",
+          "messageText": "Chuck Norris slapped the black out of Michael Jackson",
+          "date": "1644626736920"
+        },
+        {
+          "author": "Me",
+          "messageText": "fdg dfgdf g",
+          "date": "1644627012737"
+        },
+        {
+          "author": "Taras",
+          "messageText": "When you get impregnated by Chuck Norris, the following will happen: as soon as you wake up out of your coma, you will have just enough time to see the doctor jump out of the way before you explode, unleashing at least nine little bearded Chucklings into the world.",
+          "date": "1644627012737"
         }
       ]
     },
@@ -65,14 +109,12 @@
         {
           "author": "Me",
           "messageText": "asd asd a",
-          "date": "11.02.2022",
-          "time": "22:35:32"
+          "date": "1644513432869"
         },
         {
           "author": "Ivan",
           "messageText": "If you sneeze on Chuck Norris, He'll sneeze at you back. Which will blow you away.",
-          "date": "11.02.2022",
-          "time": "22:35:32"
+          "date": "1644621432869"
         }
       ]
     },
@@ -84,14 +126,22 @@
         {
           "author": "Me",
           "messageText": "asd asd a",
-          "date": "11.02.2022",
-          "time": "22:35:32"
+          "date": "1644313432869"
         },
         {
           "author": "Oleh",
           "messageText": "If you sneeze on Chuck Norris, He'll sneeze at you back. Which will blow you away.",
-          "date": "11.02.2022",
-          "time": "22:35:32"
+          "date": "1644323432869"
+        },
+        {
+          "author": "Me",
+          "messageText": "g dfgs dfg df",
+          "date": "1644626088816"
+        },
+        {
+          "author": "Oleh",
+          "messageText": "Chuck Norris slapped the black out of Michael Jackson",
+          "date": "1644626736920"
         }
       ]
     }

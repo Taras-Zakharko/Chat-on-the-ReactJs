@@ -1,27 +1,45 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState,useMemo } from "react";
 
 import "./SendMessageForm.scss";
 
 export default function SendMessageForm(props) {
+  const [user,setUser]= useState(props.users[props.contId]);
+
+  useMemo(()=> {
+    for (const user of props.users) {
+      console.log(+user.id , +props.contId);
+      if(+user.id === +props.contId){
+        setUser((prev) => prev = user)
+      }
+      
+    }
+  },[props])
+
+  let f = new Date().getTime();
+  console.log(new Date(f).toLocaleString());
+
   const [inpText, setInpText] = useState("");
   console.log(props.users);
   const sendMessage = useCallback(() => {
-    let user = props.users[props.contId];
+    // let user = props.users[props.contId];
+    console.log(user);
+    
+    
     
 
-    let today = new Date().toLocaleDateString();
-    let time = new Date().toLocaleTimeString();
+    let date = new Date().getTime();
+    
     
 
     if (inpText !== "") {
       user.message.push({
         author: "Me",
         messageText: `${inpText}`,
-        date: `${today}`,
-        time:`${time}`
+        date: `${date}`
+        
       });
 
-      fetch(`http://localhost:3000/AllUsers/${user.id}`, {
+      fetch(`http://localhost:3000/AllUsers/${props.contId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),
@@ -34,17 +52,17 @@ export default function SendMessageForm(props) {
       user.message.push({
         author: `${user.name}`,
         messageText: `${props.randomMessage}`,
-        date: `${today}`,
-        time:`${time}`
+        date: `${date}`
+        
       });
 
-      fetch(`http://localhost:3000/AllUsers/${props.contId + 1}`, {
+      fetch(`http://localhost:3000/AllUsers/${props.contId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),
       });
     }, 10000);
-  }, [props, inpText]);
+  }, [props, inpText, user]);
 
   return (
     <div className="message-form">
