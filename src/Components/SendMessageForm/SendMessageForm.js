@@ -19,7 +19,7 @@ export default function SendMessageForm(props) {
         date: `${new Date().getTime()}`,
       });
 
-      fetch(`http://localhost:3003/AllUsers/${props.contId}`, {
+      fetch(`https://app-chat-my.herokuapp.com/api/AllUsers/${props.contId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(props.user),
