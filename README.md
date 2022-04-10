@@ -1,1 +1,1 @@
-https://app-chat-my.herokuapp.com/ - link for work chat
+https://chat-on-the-react.herokuapp.com/ - link for work chat
