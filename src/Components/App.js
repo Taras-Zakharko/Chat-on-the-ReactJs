@@ -15,7 +15,7 @@ function App() {
   const [randomMessage, setRandomMessage] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3003/AllUsers")
+    fetch("https://app-chat-my.herokuapp.com/api")
       .then((res) => res.json())
       .then((result) => {
         setIsLoading(false);
