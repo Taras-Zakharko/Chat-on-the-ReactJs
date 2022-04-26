@@ -5,18 +5,59 @@
   main {
     display: flex;
     width: 100%;
-
     background-color: #eee;
     .chats {
+      display: block;
       width: 30%;
     }
     .message-block {
+      display: block;
       width: 70%;
+    }
+    .hide{
+      display: none;
+    }
+    .show{
+      display: block!important;
+      width: 100%;
     }
   }
   footer {
     height: 20px;
     background-color: #eee;
     border-top: 2px solid #dedede;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .App {
+    
+    main {
+      
+      .chats {
+        display: none;
+      }
+      .message-block {
+        width: 100%;
+      }
+    }
+    
+  }
+}
+@media screen and (min-width: 950px) {
+  .App {
+    
+    main {
+      
+      .chats {
+        display: block!important;
+        width: 30%;
+      }
+      .message-block {
+        display: block!important;
+        width: 70%;
+      }
+    }
+   
   }
 }

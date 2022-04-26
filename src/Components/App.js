@@ -1,7 +1,7 @@
 import "./App.scss";
 import Chats from "./Chats/Chats";
 import MessageList from "./MessageList/MessageList";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import useForceUpdate from "use-force-update";
 
 function App() {
@@ -35,10 +35,29 @@ function App() {
       });
   }, []);
 
+  const chatsDiv = useRef();
+  const messageDiv = useRef();
+
+  function changeLook() {
+    if ((messageDiv.current.className === "message-block")) {
+      chatsDiv.current.classList.add("show");
+      messageDiv.current.classList.add("hide");
+    }
+    if ((messageDiv.current.className === "message-block hide")) {
+      let chats = chatsDiv.current.children[1].children[1];
+      chats.addEventListener("click", (e) => {
+        chatsDiv.current.classList.remove("show");
+        messageDiv.current.classList.remove("hide");
+        
+      });
+    }
+    console.log(messageDiv.current.className,chatsDiv.current.classList);
+  }
+
   return (
     <div className="App">
       <main>
-        <div className="chats">
+        <div className="chats" ref={chatsDiv}>
           <Chats
             users={users}
             contId={contId}
@@ -48,7 +67,7 @@ function App() {
             setFilter={setFilter}
           />
         </div>
-        <div className="message-block">
+        <div className="message-block" ref={messageDiv}>
           {isLoading && <div>Loading...</div>}
           {users.length > 0 ? (
             <MessageList
@@ -60,6 +79,7 @@ function App() {
               filter={filter}
               setFilter={setFilter}
               forceUpdate={forceUpdate}
+              changeLook={changeLook}
             />
           ) : null}
         </div>

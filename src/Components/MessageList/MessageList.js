@@ -15,9 +15,12 @@ export default function MessageList(props) {
     }
   }, [props, setUserMessanges]);
 
+  
+
   return (
     <div className="message-list-block">
       <div className="interlocutor">
+        <div className="arrow-left" onClick={props.changeLook}></div>
         <img src={userMessanges.photo} alt="" />
         <h3>{userMessanges.name}</h3>
       </div>

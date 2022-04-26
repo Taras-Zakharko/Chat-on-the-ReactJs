@@ -6,6 +6,7 @@ import Contact from "./Contact";
 export default function Chats(props) {
   const [searcChat, setSearchChat] = useState("");
 
+
   return (
     <>
       <SearchChat setSearchChat={setSearchChat} searcChat={searcChat} />
